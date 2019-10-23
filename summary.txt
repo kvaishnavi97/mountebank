@@ -1,0 +1,44 @@
+Mountebank file based configuration:-
+1)Using method-post
+2)test in postman using localhost:4545
+3)Mountebank - Adding Delay to Response
+mountebank allows JavaScript injection for predicates and response 
+types for situations where the built-in ones are not sufficient
+
+
+
+Steps:-
+1)setup mountebank
+2)how to create a virtualised respone
+3)explain how we can use mountebank to create a virtualised response based on a template response
+stored in a file and modifying certain fields in response based on the request coming through.
+
+//use matches for regular expression
+CustomerFound.js and CustomerNotFound.js - are two mock responses
+1.First mock response
+2.Second mock response
+mb –configfile SoapXml/imposter.ejs –allowInjection –loglevel debug
+Predicate?-?Conditions to check request to match some criteria based on which response will be returned
+
+
+How Mountebank Works
+Simply stated, mountebank allows you to create imposters that contain all server information. You can set the connection type and the port you want to use. 
+Inside imposters, you can also set stubs. A stub is like one endpoint where you can set your predicate to inform mountebank of the kind of call you expect,
+as well as the response mountebank must return when an added element “matches” a request.
+You can set imposters and stubs by writing code using EJS files (Embedded Javascript Templates), or — what’s truly remarkable — by using a mountebank API.
+ In other words, you can actually use the mock server you created to post your new imposters and stubs, allowing you to create dynamic tests!
+
+
+
+
+commands-
+Mock it
+mb --configfile StubResponse/test.json
+start mountebank-
+mb --allowCORS --allowInjection --mock
+
+
+After mocking go to this path
+http://localhost:2525/imposters
+
+
